@@ -1,0 +1,5 @@
+6. shutdown os.system("shutdown /s")
+7. date and time
+8. Weather
+9. Play playlist
+10. Joke

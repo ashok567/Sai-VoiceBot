@@ -5,6 +5,7 @@ import wikipedia as wiki
 import os
 import re
 import webbrowser
+import smtplib
 import urllib.request
 from urllib.parse import urlencode
 
@@ -62,6 +63,20 @@ def chat_bot(command):
 		print("opening "+ result)
 		webbrowser.open_new(result)
 
+	elif 'mail' in command or 'email' in command:
+		audio_process('please write is the recipient?')
+		recipient = input("Recipient: ")
+		audio_process('What should I say?')
+		content = chat_listen()
+		mail = smtplib.SMTP('smtp.gmail.com', 587)
+		mail.ehlo()
+		mail.starttls()
+		mail.login('username', 'password')
+		mail.sendmail('username', recipient, content)
+		mail.close()
+
+		audio_process('The mail has been sent.')
+
 	elif 'wiki' in command or 'wikipedia' in command:
 		audio_process('tell me you query')
 		query = chat_listen()
@@ -90,9 +105,10 @@ chat_bot(chat_listen())
 while flag==True:
 	audio_process("You want more help?, Please say")
 	ans = chat_listen()
-	if 'yes' in ans:
-		audio_process("how may I assist you")
-		chat_bot(chat_listen())
-	else:
+	if 'no' in ans or 'thank' in ans or 'bye' in ans:
 		audio_process("Bye, see you")
 		flag=False
+	else:
+		audio_process("how may I assist you")
+		chat_bot(chat_listen())
+		

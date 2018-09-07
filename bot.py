@@ -4,6 +4,7 @@ import speech_recognition as sr
 import wikipedia as wiki
 import os
 import re
+import datetime
 import webbrowser
 import smtplib
 import urllib.request
@@ -88,6 +89,12 @@ def chat_bot(command):
 			print(e)
 			audio_process("I dont know about " + query)
 			audio_process("Please come again")
+	
+	elif 'tell me the date' in command:
+		now = datetime.datetime.now()
+		today = now.strftime('%d %B')
+		day = now.strftime('%a')
+		audio_process("today is "+day+", "+today)
 
 	elif command in ['bye', 'exit', 'quit', 'terminate', 'stop']:
 		print("Sai: Bye...See you")

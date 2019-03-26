@@ -6,8 +6,8 @@ bot = ChatBot('Bot')
 bot.set_trainer(ListTrainer)
 
 
-for file in os.listdir('/home/ashok/Desktop/SaiBot/chatterbot-corpus/chatterbot_corpus/data/english'):
+for file in os.listdir('data/english'):
 	
-	training_data= open('/home/ashok/Desktop/SaiBot/chatterbot-corpus/chatterbot_corpus/data/english/'+ file, 'r').readlines()
+	training_data= open('data/english/'+ file, 'r').readlines()
 	bot.train(training_data)
 

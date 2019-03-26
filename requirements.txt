@@ -1,0 +1,4 @@
+chatterbot
+SpeechRecognition
+gtts
+wikipedia

@@ -1,0 +1,14 @@
+.vscode/
+
+# Ignore byte-compiled files
+*.py[cod]
+
+# Ignore SQLite3 files.
+*.sqlite3
+*.sqlite3-journal
+
+
+# Avoid media files
+*.avi
+*.mp*
+*.wmv

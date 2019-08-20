@@ -11,7 +11,8 @@ import urllib.request
 from urllib.parse import urlencode
 
 bot = ChatBot('Bot')
-flag=True
+flag = True
+
 
 def audio_process(audio):
 	tts = gTTS(text=audio, lang='en')

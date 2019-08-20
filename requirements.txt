@@ -2,3 +2,5 @@ chatterbot
 SpeechRecognition
 gtts
 wikipedia
+chatterbot_corpus
+pyaudio

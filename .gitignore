@@ -1,4 +1,5 @@
-# Ignore files that should not to be committed into the repo, like data files,
+# Ignore files that should not to be committed into the repo, like 
+ files,
 # backup files, third party libraries, etc.
 
 # Filenames should NOT have spaces
@@ -20,7 +21,6 @@ __pycache__/
 *.xhtml
 
 # Data files. Try not to commit data into the repo
-data/
 *.csv
 *.dat
 *.mdb
